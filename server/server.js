@@ -24,13 +24,14 @@ app.post('/todos', (req, res) => {
   });
 });
 
+// List all todos
 app.get('/todos', (req, res) => {
   Todo.find().then((docs) => {
     res.send({docs});
   });
 });
 
-
+// fetch specific todo by id
 app.get('/todos/:id', (req, res) => {
   const id = req.params.id;
 
